@@ -1,12 +1,15 @@
-*, *::after, *::before{
+*,
+*::after,
+*::before {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
+    background: radial-gradient(circle, rgba(24, 33, 80, 1) 0%, rgba(85, 17, 31, 1) 100%);
 }
 
-.board{
+.board {
     width: 100vw;
     height: 100vh;
     display: grid;
@@ -20,7 +23,7 @@ body {
 .cell {
     width: 100px;
     height: 100px;
-    border: 1px solid black;
+    border: 1px solid rgb(64, 109, 112);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -56,24 +59,25 @@ body {
 .cell.x::before,
 .cell.x::after,
 .cell.circle::before {
-    background-color: black;
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
+    transition: all 0.1s ease-out;
 }
-
 
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after,
-.board.circle .cell:not(.x):not(.circle):hover::before
-{
-    background-color: lightgrey;
+.board.circle .cell:not(.x):not(.circle):hover::before {
+    margin-bottom: 5px;
+    transition: all 0.1s ease-out;
+    background: radial-gradient(circle, rgba(205, 165, 182, 0.26094187675070024) 0%, rgba(154, 167, 184, 1) 100%);
 }
 
 .cell.x::before,
 .cell.x::after,
 .board.x .cell:not(.x):not(.circle):hover::before,
 .board.x .cell:not(.x):not(.circle):hover::after {
-    content:'';
+    content: "";
     position: absolute;
-    width: calc(100px * .15);
+    width: calc(100px * 0.15);
     height: 90px;
 }
 
@@ -91,7 +95,7 @@ body {
 .cell.circle::after,
 .board.circle .cell:not(.x):not(.circle):hover::before,
 .board.circle .cell:not(.x):not(.circle):hover::after {
-    content:'';
+    content: "";
     position: absolute;
     border-radius: 50%;
 }
@@ -106,7 +110,7 @@ body {
 .board.circle .cell:not(.x):not(.circle):hover::after {
     width: 65px;
     height: 65px;
-    background-color: white;
+    background: transparent;
 }
 
 .winning-message {
@@ -116,19 +120,19 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .9);
+    background-color: rgba(0, 0, 0, 0.9);
     justify-content: center;
     align-items: center;
     color: white;
     font-size: 5rem;
     flex-direction: column;
-} 
+}
 
 .winning-message button {
     font-size: 3rem;
     background-color: white;
     border: 1px solid black;
-    padding: .25em .5em;
+    padding: 0.25em 0.5em;
     cursor: pointer;
 }
 

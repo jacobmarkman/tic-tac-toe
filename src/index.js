@@ -47,6 +47,7 @@ function handleClick(e) {
     setBoardHoverClass();
 }
 
+
 function endGame(draw) {
     if (draw) {
         winningMessageTextElement.innerText = 'Draw!'
@@ -55,6 +56,7 @@ function endGame(draw) {
     }
     winningMessageElement.classList.add('show')
 }
+
 
 function isDraw() {
     return [...cellElements].every(cell => {
